@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(MyApp());
-}
-
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       title: '로그인 페이지',
       home: LoginPage(),
     );
@@ -15,8 +13,10 @@ class MyApp extends StatelessWidget {
 }
 
 class LoginPage extends StatefulWidget {
+  const LoginPage({super.key});
+
   @override
-  _LoginPageState createState() => _LoginPageState();
+  State<LoginPage> createState() => _LoginPageState();
 }
 
 class _LoginPageState extends State<LoginPage> {
@@ -56,7 +56,7 @@ class _LoginPageState extends State<LoginPage> {
             children: <Widget>[
               TextFormField(
                 controller: _emailController,
-                decoration: InputDecoration(labelText: '이메일'),
+                decoration: const InputDecoration(labelText: '이메일'),
                 validator: (value) {
                   if (value == null || value.isEmpty) {
                     return '이메일을 입력하세요.';
@@ -64,10 +64,10 @@ class _LoginPageState extends State<LoginPage> {
                   return null;
                 },
               ),
-              SizedBox(height: 16.0),
+              const SizedBox(height: 16.0),
               TextFormField(
                 controller: _passwordController,
-                decoration: InputDecoration(labelText: '비밀번호'),
+                decoration: const InputDecoration(labelText: '비밀번호'),
                 obscureText: true,
                 validator: (value) {
                   if (value == null || value.isEmpty) {
@@ -76,10 +76,10 @@ class _LoginPageState extends State<LoginPage> {
                   return null;
                 },
               ),
-              SizedBox(height: 32.0),
+              const SizedBox(height: 32.0),
               ElevatedButton(
                 onPressed: _login,
-                child: Text('로그인'),
+                child: const Text('로그인'),
               ),
             ],
           ),
